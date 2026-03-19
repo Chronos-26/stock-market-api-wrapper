@@ -1,0 +1,72 @@
+{
+  "name": "stock-market-api-wrapper",
+  "version": "1.0.0",
+  "description": "Professional Stock Market API Wrapper with caching, rate limiting, and error handling",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest",
+    "test:api": "jest --testPathPattern=api",
+    "test:server": "jest --testPathPattern=server",
+    "test:websocket": "jest --testPathPattern=websocket",
+    "lint": "eslint src/ tests/",
+    "format": "prettier --write \"src/**/*.js\" \"tests/**/*.js\"",
+    "coverage": "jest --coverage",
+    "docker:build": "docker build -t stock-api-wrapper .",
+    "docker:run": "docker run -p 3000:3000 -e STOCK_API_KEY=your_key stock-api-wrapper"
+  },
+  "keywords": [
+    "stock-market",
+    "api",
+    "wrapper",
+    "finance",
+    "trading",
+    "nodejs",
+    "redis",
+    "caching",
+    "rate-limiting",
+    "websocket",
+    "real-time"
+  ],
+  "author": "Chronos Dev Services <chronos-dev@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chronos-26/stock-market-api-wrapper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Chronos-26/stock-market-api-wrapper/issues"
+  },
+  "homepage": "https://github.com/Chronos-26/stock-market-api-wrapper#readme",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.0",
+    "express": "^4.18.0",
+    "redis": "^4.6.0",
+    "rate-limiter-flexible": "^3.0.0",
+    "ws": "^8.14.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "compression": "^1.7.4"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "nodemon": "^3.0.0",
+    "supertest": "^6.3.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "@types/jest": "^29.0.0",
+    "jest-mock-redis": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "files": [
+    "src/",
+    "LICENSE",
+    "README.md"
+  ]
+}
